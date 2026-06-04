@@ -5,9 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routing/app_routes.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_avatar.dart';
-import '../../../../core/widgets/app_card.dart';
+
+
 import '../cubit/app_preferences_cubit.dart';
 import '../widgets/setting_row.dart';
 import '../widgets/setting_toggle.dart';
@@ -303,3 +302,4 @@ class SettingsBody extends StatelessWidget {
     );
   }
 }
+

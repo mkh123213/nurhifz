@@ -2,7 +2,6 @@ import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/widgets/app_avatar.dart';
 
 class DashboardHeader extends StatelessWidget {
   const DashboardHeader({super.key});
@@ -30,3 +29,4 @@ class DashboardHeader extends StatelessWidget {
     );
   }
 }
+

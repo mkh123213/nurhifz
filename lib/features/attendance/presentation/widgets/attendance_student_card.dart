@@ -2,9 +2,8 @@ import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import 'package:corereusablepackage/corereusablepackage.dart';
+import 'package:corereusablepackage/corereusablepackage.dart' hide BuildContextExt;
+import 'package:nurhifz/core/extensions/context_extensions.dart';
 import '../../../students/data/models/student_model.dart';
 import '../cubit/attendance_cubit.dart';
 
@@ -122,3 +121,4 @@ class AttendanceStudentCard extends StatelessWidget {
     );
   }
 }
+

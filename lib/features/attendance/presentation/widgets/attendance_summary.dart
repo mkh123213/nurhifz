@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nurhifz/core/localization/lang_keys.dart';
-import '../../../../core/theme/app_colors.dart';
+
 import '../cubit/attendance_state.dart';
 
 class AttendanceSummary extends StatelessWidget {
@@ -52,3 +52,4 @@ class AttendanceSummary extends StatelessWidget {
     );
   }
 }
+

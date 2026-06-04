@@ -3,8 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_card.dart';
+
 import '../cubit/reports_state.dart';
 
 class ReportsJuzChart extends StatelessWidget {
@@ -91,3 +90,4 @@ class ReportsJuzChart extends StatelessWidget {
     );
   }
 }
+

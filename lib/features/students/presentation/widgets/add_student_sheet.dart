@@ -3,9 +3,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/widgets/app_button.dart';
-import '../../../../core/widgets/app_text_field.dart';
-import '../../../../core/widgets/app_toast.dart';
+
+
 import '../cubit/students_cubit.dart';
 import '../cubit/students_state.dart';
 
@@ -158,7 +157,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
         ),
         const SizedBox(height: 6),
         DropdownButtonFormField<String>(
-          initialValue: _level,
+          value: _level,
           onChanged: (v) => setState(() => _level = v ?? 'beginner'),
           decoration: const InputDecoration(),
           items: [
@@ -186,3 +185,4 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
     });
   }
 }
+

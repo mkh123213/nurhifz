@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routing/app_routes.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_avatar.dart';
-import '../../../../core/widgets/app_card.dart';
-import '../../../../core/widgets/app_empty_state.dart';
+
+
+
 import '../cubit/dashboard_state.dart';
 
 class DashboardRecentSessions extends StatelessWidget {
@@ -106,3 +105,4 @@ class DashboardRecentSessions extends StatelessWidget {
     );
   }
 }
+

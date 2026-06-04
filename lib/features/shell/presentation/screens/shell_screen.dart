@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routing/app_routes.dart';
-import '../../../../core/theme/app_colors.dart';
+
 
 class ShellScreen extends StatelessWidget {
   final Widget child;
@@ -113,3 +113,4 @@ class _NavItem extends StatelessWidget {
     );
   }
 }
+

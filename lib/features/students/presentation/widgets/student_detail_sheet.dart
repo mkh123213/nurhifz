@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/service_locator.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_avatar.dart';
-import '../../../../core/widgets/app_empty_state.dart';
-import '../../../../core/widgets/app_loading_overlay.dart';
+
+
+
 import '../../data/models/student_model.dart';
 import '../cubit/student_detail_cubit.dart';
 import '../cubit/student_detail_state.dart';
@@ -228,3 +227,4 @@ class _SheetContentState extends State<_SheetContent> {
     );
   }
 }
+

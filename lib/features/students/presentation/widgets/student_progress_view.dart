@@ -2,9 +2,8 @@ import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_card.dart';
-import '../../../../core/widgets/app_empty_state.dart';
+
+
 import '../../data/models/progress_model.dart';
 
 class StudentProgressView extends StatelessWidget {
@@ -119,3 +118,4 @@ class StudentProgressView extends StatelessWidget {
     );
   }
 }
+

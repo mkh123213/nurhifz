@@ -3,10 +3,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/constants/surah_data.dart';
-import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/widgets/app_button.dart';
-import '../../../../core/widgets/app_text_field.dart';
-import '../../../../core/widgets/app_toast.dart';
+import 'package:corereusablepackage/corereusablepackage.dart';
+
+
 import '../cubit/student_detail_cubit.dart';
 import '../cubit/student_detail_state.dart';
 
@@ -146,7 +145,7 @@ class _SessionFormState extends State<SessionForm> {
         ),
         const SizedBox(height: 6),
         DropdownButtonFormField<String>(
-          initialValue: _type,
+          value: _type,
           onChanged: (v) => setState(() => _type = v ?? 'hifz'),
           decoration: const InputDecoration(),
           items: [
@@ -169,7 +168,7 @@ class _SessionFormState extends State<SessionForm> {
         ),
         const SizedBox(height: 6),
         DropdownButtonFormField<String>(
-          initialValue: _surah,
+          value: _surah,
           onChanged: (v) {
             setState(() {
               _surah = v ?? surahs.first;
@@ -205,3 +204,4 @@ class _SessionFormState extends State<SessionForm> {
     });
   }
 }
+

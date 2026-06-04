@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
-import '../../../../core/theme/app_colors.dart';
+
 
 class SettingToggle extends StatelessWidget {
   final bool value;
@@ -45,3 +45,4 @@ class SettingToggle extends StatelessWidget {
     );
   }
 }
+
