@@ -1,0 +1,59 @@
+name: corereusablepackage
+description: Reusable Flutter Core Kit — theme, widgets, preferences, services, and extensions for clean architecture apps.
+version: 2.0.0
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+  flutter: '>=3.24.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State & DI
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.8
+  get_it: ^9.2.1
+
+  # Storage & Preferences
+  shared_preferences: ^2.3.4
+
+  # UI & Theme
+  google_fonts: ^8.1.0
+  fluttertoast: ^9.1.0
+
+  # Routing
+  go_router: ^17.2.3
+
+  # Localization
+  easy_localization: ^3.0.8
+  intl: ^0.20.2
+
+  # Firebase
+  firebase_auth: ^6.5.1
+  cloud_firestore: ^6.4.1
+
+  # Supabase
+  supabase_flutter: ^2.9.0
+
+  # Media
+  image_picker: ^1.1.2
+
+  # Connectivity
+  connectivity_plus: ^7.1.1
+
+  # Permissions
+  permission_handler: ^12.0.3
+
+  # Utilities
+  url_launcher: ^6.3.1
+  share_plus: ^13.1.0
+  package_info_plus: ^10.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

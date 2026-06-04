@@ -1,0 +1,162 @@
+{
+  "project_info": {
+    "project_number": "940046231017",
+    "project_id": "test-8f18d",
+    "storage_bucket": "test-8f18d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:88bd9f8a777b8397635778",
+        "android_client_info": {
+          "package_name": "com.example.doctorapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:9c596164bbf8b296635778",
+        "android_client_info": {
+          "package_name": "com.example.doyonapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:dd6d7394002c8dc8635778",
+        "android_client_info": {
+          "package_name": "com.example.flutter_complete_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:a8bfba358d494945635778",
+        "android_client_info": {
+          "package_name": "com.example.medicinwithclaude"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:cad590cf18ebaea1635778",
+        "android_client_info": {
+          "package_name": "com.example.nurhifz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:f7e02b2c6cd364b7635778",
+        "android_client_info": {
+          "package_name": "com.example.ourse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:72fbf7afc7465128635778",
+        "android_client_info": {
+          "package_name": "com.example.pharmacypro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:550d1fed92ed2fb0635778",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
