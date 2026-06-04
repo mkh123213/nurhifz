@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,7 +38,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
       listenWhen: (prev, curr) => prev.isAdding && !curr.isAdding,
       listener: (context, state) {
         if (state.errorKey == null) {
-          showToast('student_added'.tr());
+          showToast(LangKeys.studentAdded.tr());
           Navigator.pop(context);
         } else {
           showToast(state.errorKey!.tr(), isError: true);
@@ -50,7 +51,9 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
           border: Border(top: BorderSide(color: context.cardBorder)),
         ),
         padding: EdgeInsets.fromLTRB(
-          20, 12, 20,
+          20,
+          12,
+          20,
           MediaQuery.of(context).viewInsets.bottom + 20,
         ),
         child: SingleChildScrollView(
@@ -70,8 +73,9 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'add_new_student'.tr(),
-                    style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
+                    LangKeys.addNewStudent.tr(),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w700, fontSize: 18),
                   ),
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
@@ -83,15 +87,16 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
-                      child: Icon(Icons.close, size: 16, color: context.mutedFg),
+                      child:
+                          Icon(Icons.close, size: 16, color: context.mutedFg),
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 16),
               AppTextField(
-                label: '${'student_name'.tr()} *',
-                hint: 'enter_full_name'.tr(),
+                label: '${LangKeys.studentName.tr()} *',
+                hint: LangKeys.enterFullName.tr(),
                 controller: _nameCtrl,
               ),
               const SizedBox(height: 12),
@@ -99,7 +104,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
                 children: [
                   Expanded(
                     child: AppTextField(
-                      label: 'phone_number'.tr(),
+                      label: LangKeys.phoneNumber.tr(),
                       hint: '05xxxxxxxx',
                       controller: _phoneCtrl,
                       keyboardType: TextInputType.phone,
@@ -108,7 +113,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: AppTextField(
-                      label: 'age'.tr(),
+                      label: LangKeys.age.tr(),
                       hint: '12',
                       controller: _ageCtrl,
                       keyboardType: TextInputType.number,
@@ -120,7 +125,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
               _levelDropdown(context),
               const SizedBox(height: 12),
               AppTextField(
-                label: 'notes'.tr(),
+                label: LangKeys.notes.tr(),
                 controller: _notesCtrl,
                 maxLines: 3,
               ),
@@ -128,7 +133,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
               BlocBuilder<StudentsCubit, StudentsState>(
                 builder: (context, state) {
                   return AppButton(
-                    label: 'add_student'.tr(),
+                    label: LangKeys.addStudent.tr(),
                     isLoading: state.isAdding,
                     onPressed: _nameCtrl.text.trim().isEmpty
                         ? null
@@ -148,7 +153,7 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'level'.tr(),
+          LangKeys.level.tr(),
           style: TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
         ),
         const SizedBox(height: 6),
@@ -157,9 +162,12 @@ class _AddStudentSheetState extends State<AddStudentSheet> {
           onChanged: (v) => setState(() => _level = v ?? 'beginner'),
           decoration: const InputDecoration(),
           items: [
-            DropdownMenuItem(value: 'beginner', child: Text('beginner'.tr())),
-            DropdownMenuItem(value: 'intermediate', child: Text('intermediate'.tr())),
-            DropdownMenuItem(value: 'advanced', child: Text('advanced'.tr())),
+            DropdownMenuItem(
+                value: 'beginner', child: Text(LangKeys.beginner.tr())),
+            DropdownMenuItem(
+                value: 'intermediate', child: Text(LangKeys.intermediate.tr())),
+            DropdownMenuItem(
+                value: 'advanced', child: Text(LangKeys.advanced.tr())),
           ],
         ),
       ],

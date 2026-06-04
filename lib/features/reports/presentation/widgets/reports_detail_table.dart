@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
@@ -20,7 +21,7 @@ class ReportsDetailTable extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16),
             child: Text(
-              'students_details'.tr(),
+              LangKeys.studentsDetails.tr(),
               style: const TextStyle(fontWeight: FontWeight.w700),
             ),
           ),
@@ -33,14 +34,27 @@ class ReportsDetailTable extends StatelessWidget {
               dataRowMaxHeight: 44,
               columnSpacing: 24,
               columns: [
-                DataColumn(label: Text('student_col'.tr(), style: TextStyle(fontSize: 12, color: context.mutedFg))),
-                DataColumn(label: Text('score_col'.tr(), style: TextStyle(fontSize: 12, color: context.mutedFg))),
-                DataColumn(label: Text('juz_col'.tr(), style: TextStyle(fontSize: 12, color: context.mutedFg))),
-                DataColumn(label: Text('attendance_col'.tr(), style: TextStyle(fontSize: 12, color: context.mutedFg))),
+                DataColumn(
+                    label: Text(LangKeys.studentCol.tr(),
+                        style:
+                            TextStyle(fontSize: 12, color: context.mutedFg))),
+                DataColumn(
+                    label: Text(LangKeys.scoreCol.tr(),
+                        style:
+                            TextStyle(fontSize: 12, color: context.mutedFg))),
+                DataColumn(
+                    label: Text(LangKeys.juzCol.tr(),
+                        style:
+                            TextStyle(fontSize: 12, color: context.mutedFg))),
+                DataColumn(
+                    label: Text(LangKeys.attendanceCol.tr(),
+                        style:
+                            TextStyle(fontSize: 12, color: context.mutedFg))),
               ],
               rows: stats.map((s) {
                 return DataRow(cells: [
-                  DataCell(Text(s.name, style: const TextStyle(fontWeight: FontWeight.w600))),
+                  DataCell(Text(s.name,
+                      style: const TextStyle(fontWeight: FontWeight.w600))),
                   DataCell(Text(
                     '${s.avgScore}%',
                     style: TextStyle(

@@ -35,5 +35,6 @@ class StudentDetailState extends Equatable {
       );
 
   @override
-  List<Object?> get props => [status, sessions, progress, isAddingSession, errorKey];
+  List<Object?> get props =>
+      [status, sessions, progress, isAddingSession, errorKey];
 }

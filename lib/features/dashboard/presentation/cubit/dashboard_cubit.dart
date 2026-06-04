@@ -35,7 +35,8 @@ class DashboardCubit extends Cubit<DashboardState> {
         attendance: results[3] as dynamic,
       ));
     } catch (_) {
-      emit(state.copyWith(status: DashboardStatus.error, errorKey: 'error_unknown'));
+      emit(state.copyWith(
+          status: DashboardStatus.error, errorKey: 'error_unknown'));
     }
   }
 }

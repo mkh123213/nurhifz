@@ -11,8 +11,7 @@ extension BuildContextExt on BuildContext {
       isDark ? AppColors.darkCard.withValues(alpha: 0.8) : AppColors.lightCard;
   Color get cardBorder =>
       isDark ? AppColors.darkCardBorder : AppColors.lightCardBorder;
-  Color get mutedFg =>
-      isDark ? AppColors.darkMutedFg : AppColors.lightMutedFg;
+  Color get mutedFg => isDark ? AppColors.darkMutedFg : AppColors.lightMutedFg;
   Color get foreground =>
       isDark ? AppColors.darkForeground : AppColors.lightForeground;
   Color get mutedBg => isDark ? AppColors.darkMuted : AppColors.lightMuted;

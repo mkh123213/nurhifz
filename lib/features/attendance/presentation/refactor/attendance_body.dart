@@ -1,9 +1,8 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/widgets/app_error_state.dart';
-import '../../../../core/widgets/app_loading_overlay.dart';
-import '../../../../core/widgets/app_toast.dart';
+import 'package:corereusablepackage/corereusablepackage.dart';
 import '../cubit/attendance_cubit.dart';
 import '../cubit/attendance_state.dart';
 import '../widgets/attendance_date_picker.dart';
@@ -16,9 +15,10 @@ class AttendanceBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AttendanceCubit, AttendanceState>(
-      listenWhen: (prev, curr) => prev.isSaving && !curr.isSaving && curr.errorKey == null,
+      listenWhen: (prev, curr) =>
+          prev.isSaving && !curr.isSaving && curr.errorKey == null,
       listener: (context, state) {
-        showToast('saved'.tr());
+        showToast(LangKeys.saved.tr());
       },
       builder: (context, state) {
         if (state.status == AttendanceStatus.loading) {
@@ -40,8 +40,9 @@ class AttendanceBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'attendance_title'.tr(),
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                  LangKeys.attendanceTitle.tr(),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 16),
                 const AttendanceDatePicker(),

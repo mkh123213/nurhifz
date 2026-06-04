@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +14,13 @@ class ReportsLevelPie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final levels = [
-      ('advanced'.tr(), state.levelCount('advanced'), AppColors.green),
-      ('intermediate'.tr(), state.levelCount('intermediate'), AppColors.primary),
-      ('beginner'.tr(), state.levelCount('beginner'), AppColors.yellow),
+      (LangKeys.advanced.tr(), state.levelCount('advanced'), AppColors.green),
+      (
+        LangKeys.intermediate.tr(),
+        state.levelCount('intermediate'),
+        AppColors.primary
+      ),
+      (LangKeys.beginner.tr(), state.levelCount('beginner'), AppColors.yellow),
     ];
 
     return AppCard(
@@ -23,7 +28,7 @@ class ReportsLevelPie extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'level_distribution'.tr(),
+            LangKeys.levelDistribution.tr(),
             style: const TextStyle(fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 16),

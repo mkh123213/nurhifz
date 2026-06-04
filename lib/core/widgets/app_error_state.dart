@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:nurhifz/core/localization/lang_keys.dart';
 
 class AppErrorState extends StatelessWidget {
   final String message;
@@ -27,7 +28,7 @@ class AppErrorState extends StatelessWidget {
               TextButton.icon(
                 onPressed: onRetry,
                 icon: const Icon(Icons.refresh, size: 18),
-                label: Text('retry'.tr()),
+                label: Text(LangKeys.retry.tr()),
               ),
             ],
           ],

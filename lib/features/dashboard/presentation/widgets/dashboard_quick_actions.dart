@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -18,16 +19,19 @@ class DashboardQuickActions extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.calendar_today, size: 24, color: AppColors.green),
+                const Icon(Icons.calendar_today,
+                    size: 24, color: AppColors.green),
                 const SizedBox(height: 8),
                 Text(
-                  'record_attendance'.tr(),
-                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                  LangKeys.recordAttendance.tr(),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w700, fontSize: 14),
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  'record_students_attendance'.tr(),
-                  style: const TextStyle(fontSize: 12, color: AppColors.darkMutedFg),
+                  LangKeys.recordStudentsAttendance.tr(),
+                  style: const TextStyle(
+                      fontSize: 12, color: AppColors.darkMutedFg),
                 ),
               ],
             ),
@@ -40,16 +44,19 @@ class DashboardQuickActions extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.star_outline, size: 24, color: AppColors.yellow),
+                const Icon(Icons.star_outline,
+                    size: 24, color: AppColors.yellow),
                 const SizedBox(height: 8),
                 Text(
-                  'evaluate_students'.tr(),
-                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                  LangKeys.evaluateStudents.tr(),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w700, fontSize: 14),
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  'add_recitation_session'.tr(),
-                  style: const TextStyle(fontSize: 12, color: AppColors.darkMutedFg),
+                  LangKeys.addRecitationSession.tr(),
+                  style: const TextStyle(
+                      fontSize: 12, color: AppColors.darkMutedFg),
                 ),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
@@ -14,7 +15,7 @@ class StudentProgressView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (progress == null) {
-      return AppEmptyState(message: 'no_progress_recorded'.tr());
+      return AppEmptyState(message: LangKeys.noProgressRecorded.tr());
     }
 
     final p = progress!;
@@ -29,20 +30,21 @@ class StudentProgressView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'total_progress'.tr(),
+                  LangKeys.totalProgress.tr(),
                   style: TextStyle(fontSize: 12, color: context.mutedFg),
                 ),
                 const SizedBox(height: 4),
                 RichText(
                   text: TextSpan(
-                    style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 36),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w800, fontSize: 36),
                     children: [
                       TextSpan(
                         text: '${p.juzCompleted}',
                         style: const TextStyle(color: AppColors.primary),
                       ),
                       TextSpan(
-                        text: '/30 ${'juz_unit'.tr()}',
+                        text: '/30 ${LangKeys.juzUnit.tr()}',
                         style: TextStyle(fontSize: 16, color: context.mutedFg),
                       ),
                     ],
@@ -60,7 +62,7 @@ class StudentProgressView extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '${'last_session'.tr()}: ${p.lastSessionDate ?? '—'}',
+                  '${LangKeys.lastSession.tr()}: ${p.lastSessionDate ?? '—'}',
                   style: TextStyle(fontSize: 12, color: context.mutedFg),
                 ),
               ],
@@ -82,7 +84,7 @@ class StudentProgressView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'pages_memorized'.tr(),
+                        LangKeys.pagesMemorized.tr(),
                         style: TextStyle(fontSize: 12, color: context.mutedFg),
                       ),
                     ],
@@ -103,7 +105,7 @@ class StudentProgressView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'target_juz'.tr(),
+                        LangKeys.targetJuz.tr(),
                         style: TextStyle(fontSize: 12, color: context.mutedFg),
                       ),
                     ],

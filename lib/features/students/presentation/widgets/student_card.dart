@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
@@ -21,9 +22,8 @@ class StudentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pct = progress != null
-        ? ((progress!.juzCompleted / 30) * 100).round()
-        : 0;
+    final pct =
+        progress != null ? ((progress!.juzCompleted / 30) * 100).round() : 0;
 
     return AppCard(
       onTap: onTap,
@@ -40,7 +40,8 @@ class StudentCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         student.name,
-                        style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 14),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -71,7 +72,8 @@ class StudentCard extends StatelessWidget {
                           value: pct / 100,
                           minHeight: 5,
                           backgroundColor: context.mutedBg,
-                          valueColor: const AlwaysStoppedAnimation(AppColors.primary),
+                          valueColor:
+                              const AlwaysStoppedAnimation(AppColors.primary),
                         ),
                       ),
                     ),
@@ -103,10 +105,10 @@ class StudentCard extends StatelessWidget {
       ),
       child: Text(
         student.level == 'advanced'
-            ? 'advanced'.tr()
+            ? LangKeys.advanced.tr()
             : student.level == 'intermediate'
-                ? 'intermediate'.tr()
-                : 'beginner'.tr(),
+                ? LangKeys.intermediate.tr()
+                : LangKeys.beginner.tr(),
         style: TextStyle(fontSize: 11, color: color),
       ),
     );

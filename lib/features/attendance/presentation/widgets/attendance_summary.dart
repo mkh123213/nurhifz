@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../cubit/attendance_state.dart';
 
@@ -11,9 +12,9 @@ class AttendanceSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = [
-      ('present'.tr(), state.countByStatus('present'), AppColors.green),
-      ('absent'.tr(), state.countByStatus('absent'), AppColors.red),
-      ('excused'.tr(), state.countByStatus('excused'), AppColors.yellow),
+      (LangKeys.present.tr(), state.countByStatus('present'), AppColors.green),
+      (LangKeys.absent.tr(), state.countByStatus('absent'), AppColors.red),
+      (LangKeys.excused.tr(), state.countByStatus('excused'), AppColors.yellow),
     ];
 
     return Row(

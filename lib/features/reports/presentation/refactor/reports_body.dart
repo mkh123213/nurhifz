@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,8 +38,9 @@ class ReportsBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'reports_title'.tr(),
-                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                  LangKeys.reportsTitle.tr(),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w800),
                 ),
                 const SizedBox(height: 16),
                 ReportsStatsGrid(state: state),

@@ -27,12 +27,15 @@ class DashboardState extends Equatable {
     final today = DateTime.now();
     final todayStr =
         '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
-    return attendance.where((a) => a.sessionDate == todayStr && a.status == 'present').length;
+    return attendance
+        .where((a) => a.sessionDate == todayStr && a.status == 'present')
+        .length;
   }
 
   int get avgScore {
     if (sessions.isEmpty) return 0;
-    return (sessions.fold<int>(0, (s, r) => s + r.score) / sessions.length).round();
+    return (sessions.fold<int>(0, (s, r) => s + r.score) / sessions.length)
+        .round();
   }
 
   int get totalJuz => progress.fold<int>(0, (s, p) => s + p.juzCompleted);
@@ -57,5 +60,6 @@ class DashboardState extends Equatable {
       );
 
   @override
-  List<Object?> get props => [status, students, sessions, progress, attendance, errorKey];
+  List<Object?> get props =>
+      [status, students, sessions, progress, attendance, errorKey];
 }

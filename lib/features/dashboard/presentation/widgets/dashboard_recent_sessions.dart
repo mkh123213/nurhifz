@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,24 +26,27 @@ class DashboardRecentSessions extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'recent_sessions'.tr(),
+                LangKeys.recentSessions.tr(),
                 style: const TextStyle(fontWeight: FontWeight.w700),
               ),
               GestureDetector(
                 onTap: () => context.go(AppRoutes.students),
                 child: Text(
-                  'add_session'.tr(),
-                  style: const TextStyle(fontSize: 12, color: AppColors.primary),
+                  LangKeys.addSession.tr(),
+                  style:
+                      const TextStyle(fontSize: 12, color: AppColors.primary),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 12),
           if (recent.isEmpty)
-            AppEmptyState(message: 'no_sessions_yet'.tr())
+            AppEmptyState(message: LangKeys.noSessionsYet.tr())
           else
             ...recent.map((s) {
-              final student = state.students.where((st) => st.id == s.studentId).firstOrNull;
+              final student = state.students
+                  .where((st) => st.id == s.studentId)
+                  .firstOrNull;
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Container(
@@ -61,13 +65,15 @@ class DashboardRecentSessions extends StatelessWidget {
                           children: [
                             Text(
                               student?.name ?? '—',
-                              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w600),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
-                              '${s.surahName} · ${s.type == 'hifz' ? 'hifz'.tr() : 'muraja'.tr()}',
-                              style: TextStyle(fontSize: 12, color: context.mutedFg),
+                              '${s.surahName} · ${s.type == 'hifz' ? LangKeys.hifz.tr() : LangKeys.muraja.tr()}',
+                              style: TextStyle(
+                                  fontSize: 12, color: context.mutedFg),
                             ),
                           ],
                         ),
@@ -85,7 +91,8 @@ class DashboardRecentSessions extends StatelessWidget {
                           ),
                           Text(
                             s.date,
-                            style: TextStyle(fontSize: 11, color: context.mutedFg),
+                            style:
+                                TextStyle(fontSize: 11, color: context.mutedFg),
                           ),
                         ],
                       ),

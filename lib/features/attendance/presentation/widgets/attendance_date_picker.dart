@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_card.dart';
+import 'package:corereusablepackage/corereusablepackage.dart';
 import '../cubit/attendance_cubit.dart';
 import '../cubit/attendance_state.dart';
 
@@ -19,7 +19,8 @@ class AttendanceDatePicker extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _arrowBtn(context, Icons.chevron_right, () => cubit.changeDate(-1)),
+              _arrowBtn(
+                  context, Icons.chevron_right, () => cubit.changeDate(-1)),
               GestureDetector(
                 onTap: () async {
                   final picked = await showDatePicker(
@@ -36,7 +37,8 @@ class AttendanceDatePicker extends StatelessWidget {
                 },
                 child: Row(
                   children: [
-                    const Icon(Icons.calendar_today, size: 16, color: AppColors.primary),
+                    const Icon(Icons.calendar_today,
+                        size: 16, color: AppColors.primary),
                     const SizedBox(width: 8),
                     Text(
                       state.selectedDate,

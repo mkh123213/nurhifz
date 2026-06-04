@@ -24,7 +24,11 @@ class SettingToggle extends StatelessWidget {
           color: value ? AppColors.primary : context.mutedBg,
           borderRadius: BorderRadius.circular(13),
           boxShadow: value
-              ? [BoxShadow(color: AppColors.primary.withValues(alpha: 0.5), blurRadius: 12)]
+              ? [
+                  BoxShadow(
+                      color: AppColors.primary.withValues(alpha: 0.5),
+                      blurRadius: 12)
+                ]
               : null,
         ),
         alignment: value ? Alignment.centerRight : Alignment.centerLeft,

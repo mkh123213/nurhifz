@@ -9,7 +9,8 @@ class StudentsRemoteDataSource {
   CollectionReference get _collection => _firestore.collection('students');
 
   Future<List<StudentModel>> getAll() async {
-    final snap = await _collection.orderBy('created_at', descending: true).get();
+    final snap =
+        await _collection.orderBy('created_at', descending: true).get();
     return snap.docs.map(StudentModel.fromFirestore).toList();
   }
 

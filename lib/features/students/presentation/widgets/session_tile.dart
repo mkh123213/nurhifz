@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
@@ -26,11 +27,12 @@ class SessionTile extends StatelessWidget {
               children: [
                 Text(
                   session.surahName,
-                  style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w600, fontSize: 14),
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  '${session.date} · ${session.type == 'hifz' ? 'hifz'.tr() : 'muraja'.tr()} · ${'from_ayah'.tr()} ${session.ayahStart}-${session.ayahEnd}',
+                  '${session.date} · ${session.type == 'hifz' ? LangKeys.hifz.tr() : LangKeys.muraja.tr()} · ${LangKeys.fromAyah.tr()} ${session.ayahStart}-${session.ayahEnd}',
                   style: TextStyle(fontSize: 11, color: context.mutedFg),
                 ),
                 if (session.notes != null && session.notes!.isNotEmpty)

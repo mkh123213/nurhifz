@@ -28,7 +28,8 @@ class AttendanceCubit extends Cubit<AttendanceState> {
         records: results[1] as dynamic,
       ));
     } catch (_) {
-      emit(state.copyWith(status: AttendanceStatus.error, errorKey: 'error_unknown'));
+      emit(state.copyWith(
+          status: AttendanceStatus.error, errorKey: 'error_unknown'));
     }
   }
 

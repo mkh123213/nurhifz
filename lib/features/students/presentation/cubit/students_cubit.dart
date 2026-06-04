@@ -23,7 +23,8 @@ class StudentsCubit extends Cubit<StudentsState> {
         progress: results[1] as dynamic,
       ));
     } catch (_) {
-      emit(state.copyWith(status: StudentsStatus.error, errorKey: 'error_unknown'));
+      emit(state.copyWith(
+          status: StudentsStatus.error, errorKey: 'error_unknown'));
     }
   }
 

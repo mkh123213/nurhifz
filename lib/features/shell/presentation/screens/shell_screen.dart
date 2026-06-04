@@ -84,7 +84,11 @@ class _NavItem extends StatelessWidget {
                 gradient: active ? AppColors.gradient : null,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: active
-                    ? [BoxShadow(color: AppColors.primary.withValues(alpha: 0.5), blurRadius: 16)]
+                    ? [
+                        BoxShadow(
+                            color: AppColors.primary.withValues(alpha: 0.5),
+                            blurRadius: 16)
+                      ]
                     : null,
               ),
               alignment: Alignment.center,

@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/context_extensions.dart';
@@ -13,10 +14,30 @@ class DashboardStatsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stats = [
-      ('total_students'.tr(), '${state.students.length}', Icons.people_outline, AppColors.primary),
-      ('present_today'.tr(), '${state.presentToday}/${state.students.length}', Icons.calendar_today, AppColors.green),
-      ('avg_scores'.tr(), '${state.avgScore}%', Icons.trending_up, AppColors.yellow),
-      ('total_juz'.tr(), '${state.totalJuz}', Icons.menu_book_outlined, AppColors.purple),
+      (
+        LangKeys.totalStudents.tr(),
+        '${state.students.length}',
+        Icons.people_outline,
+        AppColors.primary
+      ),
+      (
+        LangKeys.presentToday.tr(),
+        '${state.presentToday}/${state.students.length}',
+        Icons.calendar_today,
+        AppColors.green
+      ),
+      (
+        LangKeys.avgScores.tr(),
+        '${state.avgScore}%',
+        Icons.trending_up,
+        AppColors.yellow
+      ),
+      (
+        LangKeys.totalJuz.tr(),
+        '${state.totalJuz}',
+        Icons.menu_book_outlined,
+        AppColors.purple
+      ),
     ];
 
     return GridView.count(

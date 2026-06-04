@@ -17,9 +17,7 @@ class AttendanceRemoteDataSource {
   }
 
   Future<List<AttendanceModel>> getByDate(String date) async {
-    final snap = await _collection
-        .where('session_date', isEqualTo: date)
-        .get();
+    final snap = await _collection.where('session_date', isEqualTo: date).get();
     return snap.docs.map(AttendanceModel.fromFirestore).toList();
   }
 

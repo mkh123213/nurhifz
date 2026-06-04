@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,31 +45,33 @@ class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
                         borderRadius: BorderRadius.circular(16),
                       ),
                       alignment: Alignment.center,
-                      child: const Icon(Icons.email_outlined, color: Colors.white, size: 28),
+                      child: const Icon(Icons.email_outlined,
+                          color: Colors.white, size: 28),
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'reset_password'.tr(),
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.w800,
-                          ),
+                      LangKeys.resetPassword.tr(),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontWeight: FontWeight.w800,
+                              ),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'reset_password_subtitle'.tr(),
+                      LangKeys.resetPasswordSubtitle.tr(),
                       style: TextStyle(color: Theme.of(context).hintColor),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 32),
                     if (state.resetSent)
                       Text(
-                        'reset_link_sent'.tr(),
+                        LangKeys.resetLinkSent.tr(),
                         style: const TextStyle(fontSize: 14),
                         textAlign: TextAlign.center,
                       )
                     else ...[
                       AppTextField(
-                        label: 'email'.tr(),
+                        label: LangKeys.email.tr(),
                         hint: 'you@example.com',
                         controller: _emailCtrl,
                         keyboardType: TextInputType.emailAddress,
@@ -76,7 +79,7 @@ class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
                       ),
                       const SizedBox(height: 24),
                       AppButton(
-                        label: 'send_reset_link'.tr(),
+                        label: LangKeys.sendResetLink.tr(),
                         isLoading: state.status == AuthStatus.loading,
                         onPressed: () {
                           context.read<AuthCubit>().sendPasswordReset(
@@ -89,7 +92,7 @@ class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
                     TextButton.icon(
                       onPressed: () => context.pop(),
                       icon: const Icon(Icons.arrow_back, size: 16),
-                      label: Text('login'.tr()),
+                      label: Text(LangKeys.login.tr()),
                     ),
                   ],
                 );

@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,7 +48,7 @@ class _SessionFormState extends State<SessionForm> {
       listenWhen: (prev, curr) => prev.isAddingSession && !curr.isAddingSession,
       listener: (context, state) {
         if (state.errorKey == null) {
-          showToast('session_added'.tr());
+          showToast(LangKeys.sessionAdded.tr());
         }
       },
       child: Container(
@@ -65,7 +66,7 @@ class _SessionFormState extends State<SessionForm> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: AppTextField(
-                    label: 'score_label'.tr(),
+                    label: LangKeys.scoreLabel.tr(),
                     controller: _scoreCtrl,
                     keyboardType: TextInputType.number,
                   ),
@@ -79,7 +80,7 @@ class _SessionFormState extends State<SessionForm> {
               children: [
                 Expanded(
                   child: AppTextField(
-                    label: 'from_ayah'.tr(),
+                    label: LangKeys.fromAyah.tr(),
                     controller: _ayahStartCtrl,
                     keyboardType: TextInputType.number,
                   ),
@@ -87,7 +88,7 @@ class _SessionFormState extends State<SessionForm> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: AppTextField(
-                    label: 'to_ayah'.tr(),
+                    label: LangKeys.toAyah.tr(),
                     controller: _ayahEndCtrl,
                     keyboardType: TextInputType.number,
                     enabled: !_toLastAyah,
@@ -111,7 +112,7 @@ class _SessionFormState extends State<SessionForm> {
                 ),
                 Expanded(
                   child: Text(
-                    'to_last_ayah'.tr(),
+                    LangKeys.toLastAyah.tr(),
                     style: TextStyle(fontSize: 12, color: context.mutedFg),
                   ),
                 ),
@@ -119,13 +120,13 @@ class _SessionFormState extends State<SessionForm> {
             ),
             const SizedBox(height: 8),
             AppTextField(
-              label: 'notes'.tr(),
+              label: LangKeys.notes.tr(),
               controller: _notesCtrl,
               maxLines: 2,
             ),
             const SizedBox(height: 12),
             AppButton(
-              label: 'save_session'.tr(),
+              label: LangKeys.saveSession.tr(),
               isLoading: widget.isLoading,
               onPressed: () => _submit(context),
             ),
@@ -140,7 +141,7 @@ class _SessionFormState extends State<SessionForm> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'type_label'.tr(),
+          LangKeys.typeLabel.tr(),
           style: TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
         ),
         const SizedBox(height: 6),
@@ -149,8 +150,9 @@ class _SessionFormState extends State<SessionForm> {
           onChanged: (v) => setState(() => _type = v ?? 'hifz'),
           decoration: const InputDecoration(),
           items: [
-            DropdownMenuItem(value: 'hifz', child: Text('hifz'.tr())),
-            DropdownMenuItem(value: 'muraja', child: Text('muraja'.tr())),
+            DropdownMenuItem(value: 'hifz', child: Text(LangKeys.hifz.tr())),
+            DropdownMenuItem(
+                value: 'muraja', child: Text(LangKeys.muraja.tr())),
           ],
         ),
       ],
@@ -162,7 +164,7 @@ class _SessionFormState extends State<SessionForm> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'surah_label'.tr(),
+          LangKeys.surahLabel.tr(),
           style: TextStyle(fontSize: 12, color: Theme.of(context).hintColor),
         ),
         const SizedBox(height: 6),
@@ -178,7 +180,9 @@ class _SessionFormState extends State<SessionForm> {
           },
           isExpanded: true,
           decoration: const InputDecoration(),
-          items: surahs.map((s) => DropdownMenuItem(value: s, child: Text(s))).toList(),
+          items: surahs
+              .map((s) => DropdownMenuItem(value: s, child: Text(s)))
+              .toList(),
         ),
       ],
     );

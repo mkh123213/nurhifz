@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,8 +30,9 @@ class StudentsBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'students'.tr(),
-                        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                        LangKeys.students.tr(),
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w800),
                       ),
                       GestureDetector(
                         onTap: () => _showAddSheet(context),
@@ -48,7 +50,8 @@ class StudentsBody extends StatelessWidget {
                             ],
                           ),
                           alignment: Alignment.center,
-                          child: const Icon(Icons.add, color: Colors.white, size: 22),
+                          child: const Icon(Icons.add,
+                              color: Colors.white, size: 22),
                         ),
                       ),
                     ],
@@ -60,7 +63,7 @@ class StudentsBody extends StatelessWidget {
                   child: TextField(
                     onChanged: context.read<StudentsCubit>().updateSearch,
                     decoration: InputDecoration(
-                      hintText: 'search_student'.tr(),
+                      hintText: LangKeys.searchStudent.tr(),
                       prefixIcon: const Icon(Icons.search, size: 20),
                       contentPadding: const EdgeInsets.symmetric(vertical: 10),
                     ),
@@ -69,7 +72,8 @@ class StudentsBody extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 4),
                   child: Text(
-                    'student_count'.tr(namedArgs: {'count': '${state.filtered.length}'}),
+                    'student_count'
+                        .tr(namedArgs: {'count': '${state.filtered.length}'}),
                     style: TextStyle(fontSize: 12, color: context.mutedFg),
                   ),
                 ),

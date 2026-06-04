@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,23 +55,24 @@ class _LoginBodyState extends State<LoginBody> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     alignment: Alignment.center,
-                    child: const Icon(Icons.login, color: Colors.white, size: 28),
+                    child:
+                        const Icon(Icons.login, color: Colors.white, size: 28),
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'welcome_back'.tr(),
+                    LangKeys.welcomeBack.tr(),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.w800,
                         ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'login_subtitle'.tr(),
+                    LangKeys.loginSubtitle.tr(),
                     style: TextStyle(color: Theme.of(context).hintColor),
                   ),
                   const SizedBox(height: 32),
                   AppTextField(
-                    label: 'email'.tr(),
+                    label: LangKeys.email.tr(),
                     hint: 'you@example.com',
                     controller: _emailCtrl,
                     keyboardType: TextInputType.emailAddress,
@@ -78,7 +80,7 @@ class _LoginBodyState extends State<LoginBody> {
                   ),
                   const SizedBox(height: 16),
                   AppTextField(
-                    label: 'password'.tr(),
+                    label: LangKeys.password.tr(),
                     controller: _passwordCtrl,
                     obscureText: true,
                     prefixIcon: const Icon(Icons.lock_outline, size: 20),
@@ -88,7 +90,7 @@ class _LoginBodyState extends State<LoginBody> {
                     child: TextButton(
                       onPressed: () => context.push(AppRoutes.forgotPassword),
                       child: Text(
-                        'forgot_password'.tr(),
+                        LangKeys.forgotPassword.tr(),
                         style: const TextStyle(fontSize: 12),
                       ),
                     ),
@@ -97,7 +99,7 @@ class _LoginBodyState extends State<LoginBody> {
                   BlocBuilder<AuthCubit, AuthState>(
                     builder: (context, state) {
                       return AppButton(
-                        label: 'login_button'.tr(),
+                        label: LangKeys.loginButton.tr(),
                         isLoading: state.status == AuthStatus.loading,
                         onPressed: () {
                           context.read<AuthCubit>().signIn(
@@ -113,12 +115,12 @@ class _LoginBodyState extends State<LoginBody> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'no_account'.tr(),
+                        LangKeys.noAccount.tr(),
                         style: TextStyle(color: Theme.of(context).hintColor),
                       ),
                       TextButton(
                         onPressed: () => context.push(AppRoutes.register),
-                        child: Text('create_one'.tr()),
+                        child: Text(LangKeys.createOne.tr()),
                       ),
                     ],
                   ),

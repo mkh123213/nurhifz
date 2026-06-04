@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -56,23 +57,24 @@ class _RegisterBodyState extends State<RegisterBody> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     alignment: Alignment.center,
-                    child: const Icon(Icons.person_add, color: Colors.white, size: 28),
+                    child: const Icon(Icons.person_add,
+                        color: Colors.white, size: 28),
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'register_title'.tr(),
+                    LangKeys.registerTitle.tr(),
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.w800,
                         ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'register_subtitle'.tr(),
+                    LangKeys.registerSubtitle.tr(),
                     style: TextStyle(color: Theme.of(context).hintColor),
                   ),
                   const SizedBox(height: 32),
                   AppTextField(
-                    label: 'email'.tr(),
+                    label: LangKeys.email.tr(),
                     hint: 'you@example.com',
                     controller: _emailCtrl,
                     keyboardType: TextInputType.emailAddress,
@@ -80,14 +82,14 @@ class _RegisterBodyState extends State<RegisterBody> {
                   ),
                   const SizedBox(height: 16),
                   AppTextField(
-                    label: 'password'.tr(),
+                    label: LangKeys.password.tr(),
                     controller: _passwordCtrl,
                     obscureText: true,
                     prefixIcon: const Icon(Icons.lock_outline, size: 20),
                   ),
                   const SizedBox(height: 16),
                   AppTextField(
-                    label: 'confirm_password'.tr(),
+                    label: LangKeys.confirmPassword.tr(),
                     controller: _confirmCtrl,
                     obscureText: true,
                     prefixIcon: const Icon(Icons.lock_outline, size: 20),
@@ -96,11 +98,12 @@ class _RegisterBodyState extends State<RegisterBody> {
                   BlocBuilder<AuthCubit, AuthState>(
                     builder: (context, state) {
                       return AppButton(
-                        label: 'register_button'.tr(),
+                        label: LangKeys.registerButton.tr(),
                         isLoading: state.status == AuthStatus.loading,
                         onPressed: () {
                           if (_passwordCtrl.text != _confirmCtrl.text) {
-                            showToast('error_passwords_mismatch'.tr(), isError: true);
+                            showToast(LangKeys.errorPasswordsMismatch.tr(),
+                                isError: true);
                             return;
                           }
                           context.read<AuthCubit>().register(
@@ -116,12 +119,12 @@ class _RegisterBodyState extends State<RegisterBody> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'has_account'.tr(),
+                        LangKeys.hasAccount.tr(),
                         style: TextStyle(color: Theme.of(context).hintColor),
                       ),
                       TextButton(
                         onPressed: () => context.push(AppRoutes.login),
-                        child: Text('login'.tr()),
+                        child: Text(LangKeys.login.tr()),
                       ),
                     ],
                   ),

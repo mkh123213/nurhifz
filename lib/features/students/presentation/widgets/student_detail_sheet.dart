@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -88,12 +89,15 @@ class _SheetContentState extends State<_SheetContent> {
                   children: [
                     Text(
                       widget.student.name,
-                      style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 16),
                     ),
                     Text(
                       state.progress != null
-                          ? 'juz_of_30'.tr(namedArgs: {'count': '${state.progress!.juzCompleted}'})
-                          : 'no_progress_recorded'.tr(),
+                          ? 'juz_of_30'.tr(namedArgs: {
+                              'count': '${state.progress!.juzCompleted}'
+                            })
+                          : LangKeys.noProgressRecorded.tr(),
                       style: TextStyle(fontSize: 12, color: context.mutedFg),
                     ),
                   ],
@@ -106,7 +110,8 @@ class _SheetContentState extends State<_SheetContent> {
             child: Container(
               width: 32,
               height: 32,
-              decoration: BoxDecoration(color: context.mutedBg, shape: BoxShape.circle),
+              decoration:
+                  BoxDecoration(color: context.mutedBg, shape: BoxShape.circle),
               alignment: Alignment.center,
               child: Icon(Icons.close, size: 16, color: context.mutedFg),
             ),
@@ -117,7 +122,7 @@ class _SheetContentState extends State<_SheetContent> {
   }
 
   Widget _tabs(BuildContext context) {
-    final labels = ['sessions_tab'.tr(), 'progress_tab'.tr()];
+    final labels = [LangKeys.sessionsTab.tr(), LangKeys.progressTab.tr()];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
@@ -182,7 +187,7 @@ class _SheetContentState extends State<_SheetContent> {
             ),
           const SizedBox(height: 12),
           if (state.sessions.isEmpty)
-            AppEmptyState(message: 'no_recorded_sessions'.tr())
+            AppEmptyState(message: LangKeys.noRecordedSessions.tr())
           else
             ...state.sessions.map((s) => Padding(
                   padding: const EdgeInsets.only(bottom: 8),
@@ -210,7 +215,7 @@ class _SheetContentState extends State<_SheetContent> {
             const Icon(Icons.add, color: Colors.white, size: 18),
             const SizedBox(width: 8),
             Text(
-              'add_session'.tr(),
+              LangKeys.addSession.tr(),
               style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,

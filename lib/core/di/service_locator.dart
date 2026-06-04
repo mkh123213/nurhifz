@@ -60,7 +60,8 @@ Future<void> setupServiceLocator() async {
   getIt.registerFactory(() => StudentsCubit(getIt(), getIt()));
   getIt.registerFactory(() => StudentDetailCubit(getIt(), getIt()));
   getIt.registerFactory(() => AttendanceCubit(getIt(), getIt()));
-  getIt.registerFactory(() => DashboardCubit(getIt(), getIt(), getIt(), getIt()));
+  getIt.registerFactory(
+      () => DashboardCubit(getIt(), getIt(), getIt(), getIt()));
   getIt.registerFactory(() => ReportsCubit(getIt(), getIt(), getIt(), getIt()));
   getIt.registerLazySingleton(() => AppPreferencesCubit(getIt()));
 }

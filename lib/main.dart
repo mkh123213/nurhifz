@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
   await setupServiceLocator();
-//  
+//
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('ar'), Locale('en')],
@@ -35,7 +36,7 @@ class NurHifzApp extends StatelessWidget {
         builder: (context, prefs) {
           return MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            title: 'app_name'.tr(),
+            title: LangKeys.appName.tr(),
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,

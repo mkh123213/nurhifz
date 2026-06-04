@@ -1,10 +1,10 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_avatar.dart';
-import '../../../../core/widgets/app_card.dart';
+import 'package:corereusablepackage/corereusablepackage.dart';
 import '../../../students/data/models/student_model.dart';
 import '../cubit/attendance_cubit.dart';
 
@@ -36,7 +36,8 @@ class AttendanceStudentCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   student.name,
-                  style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w700, fontSize: 14),
                 ),
               ),
               if (currentStatus != null) _statusChip(context),
@@ -52,12 +53,16 @@ class AttendanceStudentCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: GestureDetector(
                     onTap: () {
-                      context.read<AttendanceCubit>().saveAttendance(student.id, key);
+                      context
+                          .read<AttendanceCubit>()
+                          .saveAttendance(student.id, key);
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       decoration: BoxDecoration(
-                        color: active ? color.withValues(alpha: 0.15) : Colors.transparent,
+                        color: active
+                            ? color.withValues(alpha: 0.15)
+                            : Colors.transparent,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                           color: active ? color : context.cardBorder,
@@ -67,14 +72,16 @@ class AttendanceStudentCard extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(icon, size: 14, color: active ? color : context.mutedFg),
+                          Icon(icon,
+                              size: 14,
+                              color: active ? color : context.mutedFg),
                           const SizedBox(width: 4),
                           Text(
                             key == 'present'
-                                ? 'present'.tr()
+                                ? LangKeys.present.tr()
                                 : key == 'absent'
-                                    ? 'absent'.tr()
-                                    : 'excused'.tr(),
+                                    ? LangKeys.absent.tr()
+                                    : LangKeys.excused.tr(),
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
@@ -106,10 +113,10 @@ class AttendanceStudentCard extends StatelessWidget {
       ),
       child: Text(
         key == 'present'
-            ? 'present'.tr()
+            ? LangKeys.present.tr()
             : key == 'absent'
-                ? 'absent'.tr()
-                : 'excused'.tr(),
+                ? LangKeys.absent.tr()
+                : LangKeys.excused.tr(),
         style: TextStyle(fontSize: 11, color: color),
       ),
     );

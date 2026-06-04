@@ -48,5 +48,6 @@ class AttendanceState extends Equatable {
       );
 
   @override
-  List<Object?> get props => [status, students, records, selectedDate, isSaving, errorKey];
+  List<Object?> get props =>
+      [status, students, records, selectedDate, isSaving, errorKey];
 }

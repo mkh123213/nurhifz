@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class ReportsJuzChart extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'memorization_progress_juz'.tr(),
+            LangKeys.memorizationProgressJuz.tr(),
             style: const TextStyle(fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 16),
@@ -29,8 +30,10 @@ class ReportsJuzChart extends StatelessWidget {
                 maxY: 30,
                 barTouchData: BarTouchData(enabled: true),
                 titlesData: FlTitlesData(
-                  topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                  rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                  topTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
+                  rightTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false)),
                   leftTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
@@ -46,12 +49,14 @@ class ReportsJuzChart extends StatelessWidget {
                       showTitles: true,
                       getTitlesWidget: (v, _) {
                         final i = v.toInt();
-                        if (i < 0 || i >= stats.length) return const SizedBox.shrink();
+                        if (i < 0 || i >= stats.length)
+                          return const SizedBox.shrink();
                         return Padding(
                           padding: const EdgeInsets.only(top: 4),
                           child: Text(
                             stats[i].name,
-                            style: TextStyle(fontSize: 10, color: context.mutedFg),
+                            style:
+                                TextStyle(fontSize: 10, color: context.mutedFg),
                           ),
                         );
                       },
@@ -67,7 +72,8 @@ class ReportsJuzChart extends StatelessWidget {
                       BarChartRodData(
                         toY: stats[i].juzCompleted.toDouble(),
                         width: 16,
-                        borderRadius: const BorderRadius.vertical(top: Radius.circular(6)),
+                        borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(6)),
                         gradient: const LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,

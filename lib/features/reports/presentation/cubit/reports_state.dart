@@ -41,12 +41,14 @@ class ReportsState extends Equatable {
 
   int get overallAvg {
     if (sessions.isEmpty) return 0;
-    return (sessions.fold<int>(0, (s, r) => s + r.score) / sessions.length).round();
+    return (sessions.fold<int>(0, (s, r) => s + r.score) / sessions.length)
+        .round();
   }
 
   String get bestStudentName {
     if (studentStats.isEmpty) return '—';
-    final sorted = [...studentStats]..sort((a, b) => b.avgScore.compareTo(a.avgScore));
+    final sorted = [...studentStats]
+      ..sort((a, b) => b.avgScore.compareTo(a.avgScore));
     return sorted.first.name;
   }
 
@@ -60,7 +62,9 @@ class ReportsState extends Equatable {
       final att = attendance.where((a) => a.studentId == s.id).toList();
       final presentPct = att.isEmpty
           ? 0
-          : ((att.where((a) => a.status == 'present').length / att.length) * 100).round();
+          : ((att.where((a) => a.status == 'present').length / att.length) *
+                  100)
+              .round();
       return StudentStat(
         name: s.name.split(' ').first,
         avgScore: avg,
@@ -92,5 +96,6 @@ class ReportsState extends Equatable {
       );
 
   @override
-  List<Object?> get props => [status, students, sessions, progress, attendance, errorKey];
+  List<Object?> get props =>
+      [status, students, sessions, progress, attendance, errorKey];
 }

@@ -1,3 +1,4 @@
+import 'package:nurhifz/core/localization/lang_keys.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -52,11 +53,12 @@ class SettingsBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'teacher'.tr(),
-                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                LangKeys.teacher.tr(),
+                style:
+                    const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
               ),
               Text(
-                'circle_teacher'.tr(),
+                LangKeys.circleTeacher.tr(),
                 style: TextStyle(fontSize: 12, color: context.mutedFg),
               ),
               const SizedBox(height: 4),
@@ -67,8 +69,9 @@ class SettingsBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  'teacher_badge'.tr(),
-                  style: const TextStyle(fontSize: 12, color: AppColors.primary),
+                  LangKeys.teacherBadge.tr(),
+                  style:
+                      const TextStyle(fontSize: 12, color: AppColors.primary),
                 ),
               ),
             ],
@@ -88,15 +91,18 @@ class SettingsBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'appearance'.tr(),
-            style: TextStyle(fontSize: 11, color: context.mutedFg, letterSpacing: 1),
+            LangKeys.appearance.tr(),
+            style: TextStyle(
+                fontSize: 11, color: context.mutedFg, letterSpacing: 1),
           ),
           const SizedBox(height: 8),
           SettingRow(
             icon: prefs.isDarkMode ? Icons.dark_mode : Icons.light_mode,
             iconColor: prefs.isDarkMode ? AppColors.primary : AppColors.yellow,
-            label: 'dark_mode'.tr(),
-            sublabel: prefs.isDarkMode ? 'enabled'.tr() : 'disabled'.tr(),
+            label: LangKeys.darkMode.tr(),
+            sublabel: prefs.isDarkMode
+                ? LangKeys.enabled.tr()
+                : LangKeys.disabled.tr(),
             trailing: SettingToggle(
               value: prefs.isDarkMode,
               onChanged: cubit.toggleDarkMode,
@@ -117,15 +123,16 @@ class SettingsBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'notifications'.tr(),
-            style: TextStyle(fontSize: 11, color: context.mutedFg, letterSpacing: 1),
+            LangKeys.notifications.tr(),
+            style: TextStyle(
+                fontSize: 11, color: context.mutedFg, letterSpacing: 1),
           ),
           const SizedBox(height: 8),
           SettingRow(
             icon: Icons.notifications_outlined,
             iconColor: AppColors.purple,
-            label: 'notifications'.tr(),
-            sublabel: 'receive_session_alerts'.tr(),
+            label: LangKeys.notifications.tr(),
+            sublabel: LangKeys.receiveSessionAlerts.tr(),
             trailing: SettingToggle(
               value: prefs.notifications,
               onChanged: cubit.toggleNotifications,
@@ -146,15 +153,18 @@ class SettingsBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'language'.tr(),
-            style: TextStyle(fontSize: 11, color: context.mutedFg, letterSpacing: 1),
+            LangKeys.language.tr(),
+            style: TextStyle(
+                fontSize: 11, color: context.mutedFg, letterSpacing: 1),
           ),
           const SizedBox(height: 8),
           SettingRow(
             icon: Icons.language,
             iconColor: AppColors.green,
-            label: 'app_language'.tr(),
-            sublabel: prefs.locale == 'ar' ? 'arabic'.tr() : 'english'.tr(),
+            label: LangKeys.appLanguage.tr(),
+            sublabel: prefs.locale == 'ar'
+                ? LangKeys.arabic.tr()
+                : LangKeys.english.tr(),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -167,9 +177,11 @@ class SettingsBody extends StatelessWidget {
                         context.setLocale(Locale(l));
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 6),
                         decoration: BoxDecoration(
-                          gradient: prefs.locale == l ? AppColors.gradient : null,
+                          gradient:
+                              prefs.locale == l ? AppColors.gradient : null,
                           color: prefs.locale == l ? null : context.mutedBg,
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -178,7 +190,9 @@ class SettingsBody extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                            color: prefs.locale == l ? Colors.white : context.mutedFg,
+                            color: prefs.locale == l
+                                ? Colors.white
+                                : context.mutedFg,
                           ),
                         ),
                       ),
@@ -194,9 +208,24 @@ class SettingsBody extends StatelessWidget {
 
   Widget _quickLinksSection(BuildContext context) {
     final links = [
-      (AppRoutes.students, Icons.person_outline, AppColors.primary, 'manage_students'.tr()),
-      (AppRoutes.attendance, Icons.calendar_today_outlined, AppColors.green, 'attendance_record'.tr()),
-      (AppRoutes.reports, Icons.info_outline, AppColors.yellow, 'detailed_reports'.tr()),
+      (
+        AppRoutes.students,
+        Icons.person_outline,
+        AppColors.primary,
+        LangKeys.manageStudents.tr()
+      ),
+      (
+        AppRoutes.attendance,
+        Icons.calendar_today_outlined,
+        AppColors.green,
+        LangKeys.attendanceRecord.tr()
+      ),
+      (
+        AppRoutes.reports,
+        Icons.info_outline,
+        AppColors.yellow,
+        LangKeys.detailedReports.tr()
+      ),
     ];
 
     return AppCard(
@@ -204,8 +233,9 @@ class SettingsBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'quick_links'.tr(),
-            style: TextStyle(fontSize: 11, color: context.mutedFg, letterSpacing: 1),
+            LangKeys.quickLinks.tr(),
+            style: TextStyle(
+                fontSize: 11, color: context.mutedFg, letterSpacing: 1),
           ),
           const SizedBox(height: 8),
           for (final (route, icon, color, label) in links)
@@ -216,7 +246,8 @@ class SettingsBody extends StatelessWidget {
                 icon: icon,
                 iconColor: color,
                 label: label,
-                trailing: Icon(Icons.chevron_left, size: 18, color: context.mutedFg),
+                trailing:
+                    Icon(Icons.chevron_left, size: 18, color: context.mutedFg),
               ),
             ),
         ],
@@ -254,12 +285,12 @@ class SettingsBody extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            'app_name'.tr(),
+            LangKeys.appName.tr(),
             style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
           ),
           const SizedBox(height: 4),
           Text(
-            'quran_system_desc'.tr(),
+            LangKeys.quranSystemDesc.tr(),
             style: TextStyle(fontSize: 12, color: context.mutedFg),
           ),
           const SizedBox(height: 4),

@@ -24,8 +24,10 @@ class StudentsState extends Equatable {
   List<StudentModel> get filtered {
     if (search.isEmpty) return students;
     final q = search.toLowerCase();
-    return students.where((s) =>
-        s.name.toLowerCase().contains(q) || (s.phone ?? '').contains(q)).toList();
+    return students
+        .where((s) =>
+            s.name.toLowerCase().contains(q) || (s.phone ?? '').contains(q))
+        .toList();
   }
 
   ProgressModel? progressFor(String studentId) =>
@@ -49,5 +51,6 @@ class StudentsState extends Equatable {
       );
 
   @override
-  List<Object?> get props => [status, students, progress, search, isAdding, errorKey];
+  List<Object?> get props =>
+      [status, students, progress, search, isAdding, errorKey];
 }
