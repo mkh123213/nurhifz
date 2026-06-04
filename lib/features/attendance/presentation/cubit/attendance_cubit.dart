@@ -18,14 +18,12 @@ class AttendanceCubit extends Cubit<AttendanceState> {
   Future<void> load() async {
     emit(state.copyWith(status: AttendanceStatus.loading));
     try {
-      final results = await Future.wait([
-        _studentsRepo.getAll(),
-        _attendanceRepo.getAll(limit: 200),
-      ]);
+      final students = await _studentsRepo.getAll();
+      final records = await _attendanceRepo.getAll(limit: 200);
       emit(state.copyWith(
         status: AttendanceStatus.loaded,
-        students: results[0] as dynamic,
-        records: results[1] as dynamic,
+        students: students,
+        records: records,
       ));
     } catch (_) {
       emit(state.copyWith(

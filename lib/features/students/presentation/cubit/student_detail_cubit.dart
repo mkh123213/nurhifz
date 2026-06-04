@@ -13,14 +13,12 @@ class StudentDetailCubit extends Cubit<StudentDetailState> {
   Future<void> load(String studentId) async {
     emit(state.copyWith(status: DetailStatus.loading));
     try {
-      final results = await Future.wait([
-        _sessionsRepo.getByStudent(studentId),
-        _progressRepo.getByStudent(studentId),
-      ]);
+      final sessions = await _sessionsRepo.getByStudent(studentId);
+      final progress = await _progressRepo.getByStudent(studentId);
       emit(state.copyWith(
         status: DetailStatus.loaded,
-        sessions: results[0] as dynamic,
-        progress: results[1] as dynamic,
+        sessions: sessions,
+        progress: progress,
       ));
     } catch (_) {
       emit(state.copyWith(
