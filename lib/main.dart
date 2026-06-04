@@ -12,7 +12,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
   await setupServiceLocator();
-
+//  
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('ar'), Locale('en')],
