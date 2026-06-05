@@ -1,0 +1,39 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper to check if user is authenticated and is the teacher
+    function isTeacher(teacherId) {
+      return request.auth != null && request.auth.uid == teacherId;
+    }
+
+    // Students
+    match /students/{studentId} {
+      allow read: if request.auth != null && resource.data.teacher_id == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.teacher_id == request.auth.uid;
+      allow update, delete: if isTeacher(resource.data.teacher_id);
+    }
+
+    // Sessions
+    match /sessions/{sessionId} {
+      allow read: if request.auth != null && resource.data.teacher_id == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.teacher_id == request.auth.uid;
+      allow update, delete: if isTeacher(resource.data.teacher_id);
+    }
+
+    // Progress
+    match /progress/{progressId} {
+      allow read: if request.auth != null && resource.data.teacher_id == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.teacher_id == request.auth.uid;
+      allow update, delete: if isTeacher(resource.data.teacher_id);
+    }
+
+    // Attendance
+    match /attendance/{attendanceId} {
+      allow read: if request.auth != null && resource.data.teacher_id == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.teacher_id == request.auth.uid;
+      allow update, delete: if isTeacher(resource.data.teacher_id);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "940046231017",
+    "project_id": "test-8f18d",
+    "storage_bucket": "test-8f18d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:cad590cf18ebaea1635778",
+        "android_client_info": {
+          "package_name": "com.example.nurhifz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:6ac35af308b50ee9635778",
+        "android_client_info": {
+          "package_name": "com.example.nurhifz.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940046231017:android:f0c75b5b10c8cdb6635778",
+        "android_client_info": {
+          "package_name": "com.example.nurhifz.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbHO4fBwgL5V5vPJaQh_yD9pg3HG8BO6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,39 @@
+name: nurhifz
+description: "Nur Hifz - Quran Memorization Circle Management"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  corereusablepackage:
+    path: ./corereusablepackage
+  flutter_bloc: ^9.1.1
+  get_it: ^9.2.1
+  firebase_core: ^4.10.0
+  firebase_auth: ^6.5.1
+  cloud_firestore: ^6.4.1
+  easy_localization: ^3.0.7+1
+  shared_preferences: ^2.3.5
+  # fluttertoast: ^8.2.12
+  go_router: ^17.2.3
+  fl_chart: ^0.70.2
+  google_fonts: ^8.1.0
+  intl: ^0.20.2
+  equatable: ^2.0.7
+  fluttertoast: ^9.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/
